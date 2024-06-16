@@ -47,8 +47,7 @@ body {
 
 .question {
   background-color: white;
-  padding: 2rem;
-  padding-right: 1rem;
+  padding: 2rem 1rem 1rem 2rem;
   border-radius: 0.5rem;
   box-shadow: var(--light-shadow);
   margin-bottom: 1.5rem;
@@ -64,20 +63,30 @@ body {
   margin-bottom: 1rem;
 }
 
-.plus-icon,
-.minus-icon {
+.icon {
   color: var(--clr-gold);
   cursor: pointer;
-  border: 1px solid var(--clr-gold);
+  border: 2px solid var(--clr-gold);
+  border-radius: 4px;
   height: fit-content;
   padding-inline: 0.2rem;
 }
 
-.plus-icon {
-  display: none;
+.show-answer i::before {
+  content: "\f068";
 }
 
 .question-answer {
-  padding: 1rem 1rem 1.5rem 0;
+  max-height: 0;
+  padding: 0;
+  transition: max-height 0.3s linear, padding 0.3s linear;
+  overflow: hidden;
+  border: none;
+}
+
+.show-answer .question-answer {
+  padding: 1rem 1rem 0 0;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
+  max-height: 6rem;
+  overflow-y: hidden;
 }
